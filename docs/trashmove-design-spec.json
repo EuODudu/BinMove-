@@ -1,0 +1,299 @@
+{
+  "name": "TrashMove App Design",
+  "version": "1.0.0",
+  "description": "Design specification for TrashMove - Sustainable waste management app",
+  "colorPalette": {
+    "primary": "#00C853",
+    "primaryDark": "#00897B",
+    "secondary": "#00ACC1",
+    "accent": "#FF6F00",
+    "background": "#F5F5F5",
+    "surface": "#FFFFFF",
+    "error": "#F44336",
+    "text": "#212121",
+    "textSecondary": "#757575"
+  },
+  "typography": {
+    "fontFamily": "Inter, sans-serif",
+    "headings": {
+      "h1": {"size": 32, "weight": "bold", "lineHeight": 1.2},
+      "h2": {"size": 24, "weight": "semibold", "lineHeight": 1.3},
+      "h3": {"size": 20, "weight": "semibold", "lineHeight": 1.4},
+      "body": {"size": 16, "weight": "regular", "lineHeight": 1.5},
+      "caption": {"size": 14, "weight": "regular", "lineHeight": 1.4}
+    }
+  },
+  "components": [
+    {
+      "name": "Logo",
+      "type": "image",
+      "specs": "TrashMove logo with trash can and motion arrows, green gradient background"
+    },
+    {
+      "name": "Onboarding Screen 1",
+      "title": "Bem-vindo ao TrashMove",
+      "description": "Acompanhe a coleta de lixo em tempo real e ajude a transformar sua cidade",
+      "elements": [
+        {"type": "illustration", "description": "City with recycling symbols and trucks"},
+        {"type": "button", "label": "Próximo", "variant": "primary"}
+      ]
+    },
+    {
+      "name": "Onboarding Screen 2",
+      "title": "Rastreamento em Tempo Real",
+      "description": "Veja exatamente quando o caminhão vai passar na sua rua",
+      "elements": [
+        {"type": "illustration", "description": "GPS tracker with truck icon on map"},
+        {"type": "button", "label": "Continuar", "variant": "primary"}
+      ]
+    },
+    {
+      "name": "Onboarding Screen 3",
+      "title": "Ganhe Recompensas Verdes",
+      "description": "Recicle, acumule pontos e troque por produtos sustentáveis",
+      "elements": [
+        {"type": "illustration", "description": "Medals, points and eco products"},
+        {"type": "button", "label": "Começar", "variant": "primary"}
+      ]
+    },
+    {
+      "name": "Home Screen",
+      "layout": "Bottom Navigation",
+      "sections": [
+        {
+          "name": "Header",
+          "elements": [
+            {"type": "greeting", "text": "Olá, {nome}!"},
+            {"type": "patent_badge", "rank": "Guardião Sustentável", "icon": "🌿"}
+          ]
+        },
+        {
+          "name": "Next Collection",
+          "elements": [
+            {"type": "card", "title": "Próxima Coleta", "color": "primary"},
+            {"type": "schedule", "day": "Terça-feira", "time": "14:00 - 16:00"},
+            {"type": "progress_bar", "value": 60, "label": "60% completado do mês"}
+          ]
+        },
+        {
+          "name": "Live Tracking",
+          "elements": [
+            {"type": "button", "label": "Rastrear Caminhão", "icon": "📍", "variant": "secondary"},
+            {"type": "distance_info", "text": "2.5 km da sua rua"}
+          ]
+        },
+        {
+          "name": "Quick Actions",
+          "layout": "grid",
+          "actions": [
+            {"icon": "🗺️", "label": "Pontos Coleta", "color": "secondary"},
+            {"icon": "♻️", "label": "Agendar Coleta", "color": "primary"},
+            {"icon": "📊", "label": "Meu Impacto", "color": "accent"},
+            {"icon": "🏃", "label": "Eventos", "color": "primaryDark"}
+          ]
+        },
+        {
+          "name": "Your Impact",
+          "elements": [
+            {"type": "stats_card", "metric": "25 kg reciclados", "subtitle": "Este mês"},
+            {"type": "stats_card", "metric": "-12 kg CO₂", "subtitle": "Evitados"},
+            {"type": "stats_card", "metric": "120 pontos", "subtitle": "Total"}
+          ]
+        }
+      ],
+      "navigation": [
+        {"icon": "🏠", "label": "Início", "active": true},
+        {"icon": "🗺️", "label": "Mapa"},
+        {"icon": "🎁", "label": "Recompensas"},
+        {"icon": "👤", "label": "Perfil"}
+      ]
+    },
+    {
+      "name": "Tracking Screen",
+      "title": "Rastreamento em Tempo Real",
+      "elements": [
+        {"type": "map_view", "description": "Google Maps integration with truck icon"},
+        {"type": "truck_info", "details": "Caminhão 04 - rota Centro-Oeste"},
+        {"type": "eta_display", "format": "Chegada estimada: 15:30"},
+        {"type": "notification_toggle", "label": "Notificações"}
+      ]
+    },
+    {
+      "name": "Rewards Screen",
+      "title": "Recompensas Verdes",
+      "sections": [
+        {
+          "name": "Points Balance",
+          "elements": [
+            {"type": "balance_display", "points": 120, "color": "primary"},
+            {"type": "progress_to_next_reward", "current": 120, "target": 200}
+          ]
+        },
+        {
+          "name": "Available Rewards",
+          "layout": "list",
+          "items": [
+            {"icon": "🌿", "name": "Chaveiro Ecológico", "points": 150, "available": true},
+            {"icon": "👜", "name": "Ecobag TrashMove", "points": 200, "available": true},
+            {"icon": "🥤", "name": "Copo Reutilizável", "points": 250, "available": true},
+            {"icon": "🔋", "name": "Composteira", "points": 500, "available": false},
+            {"icon": "💡", "name": "Crédito Energia Solar", "points": 300, "available": true}
+          ]
+        },
+        {
+          "name": "Ranks",
+          "elements": [
+            {"type": "rank_card", "title": "Iniciante Verde", "requirement": "0-5 kg", "achieved": false},
+            {"type": "rank_card", "title": "Guardião Sustentável", "requirement": "20 kg", "achieved": true, "current": true},
+            {"type": "rank_card", "title": "Herói Ambiental", "requirement": "50 kg", "achieved": false},
+            {"type": "rank_card", "title": "Líder Ecológico", "requirement": "100 kg", "achieved": false},
+            {"type": "rank_card", "title": "Embaixador do Planeta", "requirement": "Inspira outros", "achieved": false}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Events Screen",
+      "title": "TrashMove Run",
+      "elements": [
+        {"type": "event_card", "name": "Corrida Sustentável", "date": "15/03/2025", "location": "Parque Central"},
+        {"type": "event_details", "description": "Inscrição: R$ 30,00 | Parte revertida para reciclagem"},
+        {"type": "button", "label": "Inscrever-se", "variant": "primary"},
+        {"type": "virtual_challenge", "title": "Desafio Virtual", "description": "Corra e Recicle - Ganhe pontos extras"}
+      ]
+    },
+    {
+      "name": "Collection Points Screen",
+      "title": "Pontos de Coleta",
+      "elements": [
+        {"type": "map_view", "markers": "green pins for collection points"},
+        {"type": "filter_buttons", "filters": ["Todos", "Reciclagem", "Eletrônicos", "Óleo"]},
+        {"type": "location_list", "format": "cards with distance and hours"}
+      ]
+    },
+    {
+      "name": "Schedule Collection Screen",
+      "title": "Agendar Coleta",
+      "elements": [
+        {"type": "material_selector", "options": ["Plástico", "Papel", "Metal", "Vidro", "Eletrônicos"]},
+        {"type": "quantity_input", "unit": "kg"},
+        {"type": "date_picker", "label": "Data preferida"},
+        {"type": "time_slot_selector", "format": "morning/afternoon"},
+        {"type": "button", "label": "Confirmar Coleta", "variant": "primary"}
+      ]
+    },
+    {
+      "name": "Impact Screen",
+      "title": "Meu Impacto Ambiental",
+      "elements": [
+        {"type": "chart", "type": "line", "title": "Reciclagem Mensal", "period": "12 meses"},
+        {"type": "stat_grid", "stats": [
+          {"label": "Total Reciclado", "value": "156 kg"},
+          {"label": "CO₂ Evitado", "value": "-78 kg"},
+          {"label": "Árvores Salv As", "value": "3.2"},
+          {"label": "Patente Atual", "value": "Guardião 🌿"}
+        ]},
+        {"type": "achievements_section", "badges": ["First Steps", "Monthly Goal", "Eco Warrior"]}
+      ]
+    },
+    {
+      "name": "Profile Screen",
+      "elements": [
+        {"type": "profile_header", "avatar": "user_photo", "name": "Nome do Usuário", "patent": "Guardião Sustentável"},
+        {"type": "menu_list", "items": [
+          {"icon": "⚙️", "label": "Configurações", "action": "navigation"},
+          {"icon": "🔔", "label": "Notificações", "action": "toggle"},
+          {"icon": "👥", "label": "Convite amigos", "action": "share"},
+          {"icon": "💳", "label": "Plano Premium", "badge": "Trial"},
+          {"icon": "📝", "label": "Dicas e Novidades", "action": "navigation"},
+          {"icon": "❓", "label": "Ajuda", "action": "navigation"},
+          {"icon": "📤", "label": "Compartilhar App", "action": "share"}
+        ]},
+        {"type": "logout_button", "label": "Sair", "variant": "text"}
+      ]
+    },
+    {
+      "name": "Premium Screen",
+      "title": "Plano Premium",
+      "price": "R$ 9,90/mês",
+      "features": [
+        "✓ Rastreamento em tempo real dos caminhões",
+        "✓ Relatórios de impacto ambiental pessoal",
+        "✓ Descontos em parceiros ecológicos",
+        "✓ Recompensas exclusivas Premium",
+        "✓ Sem anúncios"
+      ],
+      "elements": [
+        {"type": "button", "label": "Assinar Premium", "variant": "primary"},
+        {"type": "trial_badge", "text": "7 dias grátis"}
+      ]
+    },
+    {
+      "name": "Notification Detail",
+      "elements": [
+        {"type": "notification_card", "title": "Coleta chegando!", "time": "Agora", "icon": "🚛"},
+        {"type": "message", "text": "O caminhão de coleta está a 500m da sua rua. Hora de levar o lixo para fora!"},
+        {"type": "action_buttons", "options": ["Dispensar", "Ver rota"]}
+      ]
+    }
+  ],
+  "designSystem": {
+    "spacing": {
+      "xs": 4,
+      "sm": 8,
+      "md": 16,
+      "lg": 24,
+      "xl": 32
+    },
+    "borderRadius": {
+      "small": 8,
+      "medium": 12,
+      "large": 16,
+      "round": 999
+    },
+    "shadows": {
+      "small": "0 1px 3px rgba(0,0,0,0.1)",
+      "medium": "0 4px 6px rgba(0,0,0,0.1)",
+      "large": "0 10px 20px rgba(0,0,0,0.15)"
+    }
+  },
+  "userFlow": {
+    "onboarding": ["Screen 1", "Screen 2", "Screen 3", "Home"],
+    "mainFlow": ["Home", "Tracking", "Rewards", "Events", "Collection Points", "Schedule", "Impact", "Profile"],
+    "navigation": "Bottom tabs: Home, Map, Rewards, Profile"
+  },
+  "premiumFeatures": {
+    "realTimeTracking": true,
+    "environmentalReports": true,
+    "partnerDiscounts": true,
+    "exclusiveRewards": true,
+    "noAds": true
+  },
+  "gamification": {
+    "ranks": [
+      {"name": "Iniciante Verde", "icon": "♻️", "threshold": 5},
+      {"name": "Guardião Sustentável", "icon": "🌿", "threshold": 20},
+      {"name": "Herói Ambiental", "icon": "🌎", "threshold": 50},
+      {"name": "Líder Ecológico", "icon": "🔋", "threshold": 100},
+      {"name": "Embaixador do Planeta", "icon": "🌟", "threshold": "special"}
+    ],
+    "rewardsTypes": ["Physical products", "Sustainable items", "Partner discounts", "Energy credits"],
+    "challenges": ["Monthly goals", "Virtual runs", "Community challenges"]
+  },
+  "businessModel": {
+    "revenueStreams": [
+      "Premium subscriptions (R$ 9.90/month)",
+      "Municipality licensing",
+      "Recycling commission (10%)",
+      "Green advertising"
+    ],
+    "events": {
+      "TrashMoveRun": {
+        "pricing": "R$ 30.00",
+        "revenueShare": "Partial to sustainable fund",
+        "features": ["Registration in app", "Virtual challenges", "Partner sponsorships"]
+      }
+    }
+  }
+}
+

@@ -1,0 +1,30 @@
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+
+# Word Documents (opcional - descomente se não quiser versionar)
+# *.docx
+
+# Build files (se futuramente usar build tools)
+# dist/
+# build/
+
+# Node modules (se futuramente usar npm)
+# node_modules/
+
